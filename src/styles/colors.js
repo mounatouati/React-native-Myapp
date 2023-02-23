@@ -1,4 +1,4 @@
 export const color= {
-primaryColor:"royalblue",
+primaryColor:"hsl(191,65%,59%)",
 lightColor: "whitesmoke"
 };

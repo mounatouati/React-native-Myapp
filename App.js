@@ -2,28 +2,28 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useState } from 'react';
 import { UserContext } from './src/components/contexts/UserContext';
-
-import Auth from './src/components/pages/Auth/Auth';
-import Profil from './src/components/pages/Profil/Profil';
-
+import { NavigationContainer } from '@react-navigation/native';
+import Auth from './src/components/screens/Auth/Auth';
+import Profil from './src/components/screens/Profil/Profil';
+import ProfilStack from './src/components/stacks/ProfilStack';
 export default function App() {
-    const userFromDb ={
-        id: 1 ,
-        email:"mouna@",
+    const userFromDb = {
+        id: 1,
+        email: "mouna@",
         username: "mouna",
         avatar: null,
-         }
+    }
     const [user, setUser] = useState(userFromDb);
 
     return (
         <UserContext.Provider
-         value={{user : user , setUser : setUser}}>
-        <View style={classes.container}>
-           <View>
-                {!user ? <Auth /> : <Profil />}
-            </View>
-            <StatusBar style="auto" />
-        </View>
+            value={{ user, setUser }}>
+            <NavigationContainer>
+                <View style={classes.container}>
+                    {user === null ? <Auth /> : <ProfilStack />}
+                    <StatusBar style="auto" />
+                </View>
+            </NavigationContainer>
         </UserContext.Provider>
     );
 }
@@ -33,13 +33,8 @@ export default function App() {
 
 const classes = StyleSheet.create({
     container: {
-        width: "100%",
-        backgroundColor: "white",
-        marginTop: 100,
-    },
-
-    texte: {
-        color: "green",
+        paddingTop:50,
+       flex:1,
     },
 });
 /* Exercice 1:
