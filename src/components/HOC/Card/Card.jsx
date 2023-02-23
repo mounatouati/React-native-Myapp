@@ -1,5 +1,6 @@
 
 import { Button, StyleSheet, Text, View } from "react-native";
+import { color } from "../../../styles/colors";
 
 export default function Card(props) {
 
@@ -15,25 +16,25 @@ export default function Card(props) {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#602040",
+        backgroundColor: color.primaryColor,
         borderRadius: 10,
         width: "90%",
         alignSelf: "center",
     },
     header: {},
     title: {
-        color: "whitesmoke",
+        color: color.lightColor,
         fontSize: 35,
         textAlign: "center",
     },
     content: {
-        color: "whitesmoke",
+        color: color.lightColor,
         fontSize: 20,
         textAlign: "center",
         padding: 5,
     },
     children: {
         padding: 10,
-        backgroundColor: "whitesmoke",
+        backgroundColor: color.lightColor,
     },
 });

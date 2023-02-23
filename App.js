@@ -1,22 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useState } from 'react';
+import { UserContext } from './src/components/contexts/UserContext';
+
 import Auth from './src/components/pages/Auth/Auth';
 import Profil from './src/components/pages/Profil/Profil';
 
 export default function App() {
-    const [user, setUser] = useState(null);
+    const userFromDb ={
+        id: 1 ,
+        email:"mouna@",
+        username: "mouna",
+        avatar: null,
+         }
+    const [user, setUser] = useState(userFromDb);
 
     return (
+        <UserContext.Provider
+         value={{user : user , setUser : setUser}}>
         <View style={classes.container}>
-            {/* <Text style={classes.texte}>Bonjour!</Text>
-            <Button onPress={() => alert("Clique!")} title="Cliques moi"></Button>
-          */}  
            <View>
                 {!user ? <Auth /> : <Profil />}
             </View>
             <StatusBar style="auto" />
         </View>
+        </UserContext.Provider>
     );
 }
 // 1 ere: Les composants natifs

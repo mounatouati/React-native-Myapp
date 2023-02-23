@@ -1,8 +1,8 @@
 import { Button, TextInput, TouchableOpacity, StyleSheet, Text, View } from "react-native";
 
 import Card from "../../HOC/Card/Card";
-import LoginForm from "../../../containers/LoginForm/LoginForm";
-import SignupForm from "../../../containers/SignupForm/SignupForm";
+import LoginForm from "../../containers/LoginForm/LoginForm";
+import SignupForm from "../../containers/SignupForm/SignupForm";
 import { useState } from 'react';
 export default function Auth() {
     const [isLogin, setter] = useState(true);
@@ -21,6 +21,7 @@ export default function Auth() {
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     button: {
         alignSelf: "center",
