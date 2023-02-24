@@ -1,9 +1,9 @@
-import { Button, Image, Text, StyleSheet,ScrollView,View } from "react-native";
+import { Button, Image, Text, StyleSheet,ScrollView,View,TouchableOpacity  } from "react-native";
 import { UserContext } from "../../contexts/UserContext";
 import { useContext, useState } from 'react';
 import Card from "../../HOC/Card/Card";
 import defaultavatar from "../../../../assets/defaultavatar.png";
-import { TouchableOpacity } from "react-native-web";
+//import { TouchableOpacity } from "react-native-web";
 import { MaterialIcons } from '@expo/vector-icons';
 import { color } from "../../../styles/colors";
 import * as ImagePicker from 'expo-image-picker';
